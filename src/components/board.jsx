@@ -20,6 +20,7 @@ export default function Board() {
             <button onClick={handleClick} data-id='0'>FrontEnd</button>
             <button onClick={handleClick} data-id='30'>Web 3</button>
             <button onClick={handleClick} data-id='7'>BackEnd</button>
+            <button onClick={handleClick} data-id='2'>Product Design</button>
         </div>
 
         <Profile Leaderboard={between(Leaderboard, period)}></Profile>
@@ -39,7 +40,8 @@ function between(data, between){
         let userDate = new Date(val.dt);
         if (between == 0) return val;
         if (between == 7) return today >= userDate;
-        if (between == 30) return previous <= userDate
+        if (between == 30) return previous <= userDate;
+        if (between == 2) return previous > userDate;
         // return previous <= userDate && today >= userDate;
     })
 
